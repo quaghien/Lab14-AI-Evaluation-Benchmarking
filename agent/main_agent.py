@@ -1,40 +1,66 @@
 import asyncio
-from typing import List, Dict
+from typing import Dict
+
+from dotenv import load_dotenv
+from openai import AsyncOpenAI
+
+from agent.retriever import Retriever
+
+load_dotenv()
+
+GENERATION_MODEL = "gpt-4o-mini"
+TOP_K = 3
+
+SYSTEM_PROMPT = (
+    "Bạn là trợ lý hỗ trợ nội bộ. Trả lời câu hỏi dựa trên các đoạn tài liệu được cung cấp. "
+    "Nếu tài liệu không đủ thông tin, hãy nói rõ điều đó."
+)
+
 
 class MainAgent:
-    """
-    Đây là Agent mẫu sử dụng kiến trúc RAG đơn giản.
-    Sinh viên nên thay thế phần này bằng Agent thực tế đã phát triển ở các buổi trước.
-    """
-    def __init__(self):
-        self.name = "SupportAgent-v1"
+    def __init__(self, version: str = "v2"):
+        self.version = version
+        self.name = f"SupportAgent-{version}"
+        self.retriever = Retriever()
+        self.client = AsyncOpenAI()
 
     async def query(self, question: str) -> Dict:
-        """
-        Mô phỏng quy trình RAG:
-        1. Retrieval: Tìm kiếm context liên quan.
-        2. Generation: Gọi LLM để sinh câu trả lời.
-        """
-        # Giả lập độ trễ mạng/LLM
-        await asyncio.sleep(0.5) 
-        
-        # Giả lập dữ liệu trả về
-        return {
-            "answer": f"Dựa trên tài liệu hệ thống, tôi xin trả lời câu hỏi '{question}' như sau: [Câu trả lời mẫu].",
-            "contexts": [
-                "Đoạn văn bản trích dẫn 1 dùng để trả lời...",
-                "Đoạn văn bản trích dẫn 2 dùng để trả lời..."
+        retrieval_result = self.retriever.retrieve(question, version=self.version, top_k=TOP_K)
+
+        context = "\n\n---\n\n".join(retrieval_result["retrieved_chunks"])
+        user_message = f"Tài liệu tham khảo:\n{context}\n\nCâu hỏi: {question}"
+
+        response = await self.client.chat.completions.create(
+            model=GENERATION_MODEL,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_message},
             ],
+            temperature=0,
+        )
+
+        answer = response.choices[0].message.content
+        tokens_used = response.usage.total_tokens
+
+        return {
+            "answer": answer,
+            "retrieved_chunk_ids": retrieval_result["retrieved_chunk_ids"],
+            "retrieved_chunks": retrieval_result["retrieved_chunks"],
+            "retrieval_mode": retrieval_result["retrieval_mode"],
             "metadata": {
-                "model": "gpt-4o-mini",
-                "tokens_used": 150,
-                "sources": ["policy_handbook.pdf"]
-            }
+                "model": GENERATION_MODEL,
+                "tokens_used": tokens_used,
+            },
         }
 
+
 if __name__ == "__main__":
-    agent = MainAgent()
     async def test():
+        agent = MainAgent(version="v2")
         resp = await agent.query("Làm thế nào để đổi mật khẩu?")
-        print(resp)
+        print(f"Answer: {resp['answer']}")
+        print(f"Retrieved: {resp['retrieved_chunk_ids']}")
+        print(f"Mode: {resp['retrieval_mode']}")
+        print(f"Tokens: {resp['metadata']['tokens_used']}")
+
     asyncio.run(test())
