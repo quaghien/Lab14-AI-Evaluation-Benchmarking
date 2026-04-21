@@ -1,0 +1,1606 @@
+{
+  "v1_results": [
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Sau khi khắc phục, viết incident report trong vòng 24 giờ.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_8",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_8",
+        "doc_sla_p1_2026_c_5",
+        "doc_sla_p1_2026_c_3"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.2216360999736935,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Nhân viên gửi yêu cầu nghỉ phép qua hệ thống HR Portal (https://hr.company.internal) ít nhất 3 ngày làm việc trước ngày nghỉ.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_4",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_4",
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 4.3,
+      "agreement_rate": 0.5,
+      "latency": 4.182845700008329,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Nhắc nhở sẽ được gửi 30 ngày trước khi hết hạn.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_6",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_5",
+        "doc_it_helpdesk_faq_c_5",
+        "doc_policy_refund_v4_c_0"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.828343600034714,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Yêu cầu được gửi trong vòng 7 ngày làm việc kể từ thời điểm xác nhận đơn hàng.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_2",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_2",
+        "doc_access_control_sop_c_10",
+        "doc_it_helpdesk_faq_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.827281100035179,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"On-call IT Admin có thể cấp quyền tạm thời (max 24 giờ) sau khi được Tech Lead phê duyệt bằng lời.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_7",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_8",
+        "doc_hr_leave_policy_c_1",
+        "doc_it_helpdesk_faq_c_9"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.500448199978564,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"v2025.1 (2025-03-01): Phiên bản đầu tiên.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_10",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_7",
+        "doc_policy_refund_v4_c_1",
+        "doc_sla_p1_2026_c_0"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.5303006999893114,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"4.2 Yêu cầu kỹ thuật khi remote:\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_8",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_8",
+        "doc_policy_refund_v4_c_2",
+        "doc_sla_p1_2026_c_3"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.8616596999927424,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Mật khẩu mới sẽ được gửi qua email công ty trong vòng 5 phút.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_1",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_2",
+        "doc_it_helpdesk_faq_c_1",
+        "doc_it_helpdesk_faq_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.518126300012227,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"khách hàng có thể chọn nhận store credit thay thế với giá trị 110% so với số tiền hoàn.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_7",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_7",
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_5"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 2.2,
+      "agreement_rate": 0.5,
+      "latency": 5.4535891999839805,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Tài liệu này trước đây có tên 'Approval Matrix for System Access'.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_0",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_4",
+        "doc_sla_p1_2026_c_8",
+        "doc_access_control_sop_c_4"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.162235600000713,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Cập nhật SLA P1 resolution từ 6 giờ xuống 4 giờ.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_9",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_5",
+        "doc_policy_refund_v4_c_8",
+        "doc_hr_leave_policy_c_9"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.4670632000197656,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Có thể gửi yêu cầu muộn hơn nhưng phải được Line Manager đồng ý qua tin nhắn trực tiếp.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_5",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_5",
+        "doc_hr_leave_policy_c_4",
+        "doc_hr_leave_policy_c_6"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.359606200014241,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Hệ thống sẽ nhắc nhở 7 ngày trước khi hết hạn.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_2",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_6",
+        "doc_it_helpdesk_faq_c_2",
+        "doc_access_control_sop_c_9"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.6291165000293404,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Chính sách này áp dụng cho tất cả các đơn hàng được đặt trên hệ thống nội bộ kể từ ngày 01/02/2026.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_0",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_1",
+        "doc_policy_refund_v4_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.0916921999887563,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Mọi bất thường phải được báo cáo lên CISO trong vòng 24 giờ.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_10",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_10",
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_8"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 5.224623200017959,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Ngay khi nhận ticket, update mỗi 30 phút cho đến khi resolve.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_4",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_0",
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_3"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 4.288670199981425,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Làm thêm giờ phải được Line Manager phê duyệt trước bằng văn bản.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_6",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_6",
+        "doc_access_control_sop_c_3",
+        "doc_hr_leave_policy_c_2"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.0545352999470197,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"9000 (8:00 - 18:00, Thứ 2 - Thứ 6)\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_9",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_5",
+        "doc_sla_p1_2026_c_0",
+        "doc_hr_leave_policy_c_6"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.0625696000061,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Đơn hàng đã áp dụng mã giảm giá đặc biệt theo chương trình khuyến mãi Flash Sale.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_4",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_1",
+        "doc_sla_p1_2026_c_6",
+        "doc_sla_p1_2026_c_0"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.7435796999488957,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"IT Security review với Level 3 và Level 4.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_6",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_5",
+        "doc_sla_p1_2026_c_10",
+        "doc_it_helpdesk_faq_c_7"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.2421331999939866,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"On-call engineer nhận alert hoặc ticket, xác nhận severity trong 5 phút.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_6",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_6",
+        "doc_sla_p1_2026_c_7",
+        "doc_sla_p1_2026_c_3"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.132843100000173,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Theo lịch nghỉ lễ quốc gia do HR công bố hàng năm vào tháng 12.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_3",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_2",
+        "doc_access_control_sop_c_0",
+        "doc_hr_leave_policy_c_2"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.529005300020799,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Nhắc nhở sẽ được gửi 30 ngày trước khi hết hạn.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_5",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_8",
+        "doc_policy_refund_v4_c_8",
+        "doc_hr_leave_policy_c_2"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 2.3530255999648944,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Thứ 2 - Thứ 6, 8:00 - 17:30.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_8",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_7",
+        "doc_policy_refund_v4_c_5"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 2.6,
+      "agreement_rate": 0.5,
+      "latency": 4.0353330000070855,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Line Manager phê duyệt yêu cầu trong 1 ngày làm việc.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_5",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_2",
+        "doc_access_control_sop_c_4",
+        "doc_access_control_sop_c_1"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 2.952581999998074,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Một số tính năng không hoạt động, ảnh hưởng một nhóm người dùng.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_2",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_2",
+        "doc_sla_p1_2026_c_1",
+        "doc_it_helpdesk_faq_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 4.0,
+      "agreement_rate": 0.5,
+      "latency": 4.107688200019766,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Tối đa 5 ngày phép năm chưa dùng được chuyển sang năm tiếp theo.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_1",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_2",
+        "doc_hr_leave_policy_c_7"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.543377199966926,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Truy cập https://sso.company.internal/reset hoặc liên hệ Helpdesk qua ext. 9000.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_0",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_5",
+        "doc_hr_leave_policy_c_1",
+        "doc_access_control_sop_c_7"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.699698000040371,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"CS Agent xem xét trong vòng 1 ngày làm việc và xác nhận điều kiện đủ điều kiện.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_5",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_5",
+        "doc_policy_refund_v4_c_0",
+        "doc_access_control_sop_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 2.6,
+      "agreement_rate": 0.5,
+      "latency": 3.8223975999862887,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Sau 24 giờ, phải có ticket chính thức hoặc quyền bị thu hồi tự động.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_8",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_9",
+        "doc_it_helpdesk_faq_c_4",
+        "doc_hr_leave_policy_c_7"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.4322451000334695,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Tự động escalate sau 90 phút không có phản hồi.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_5",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_5",
+        "doc_access_control_sop_c_3",
+        "doc_it_helpdesk_faq_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 2.8753405999741517,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Thứ 2 - Thứ 6, 8:30 - 17:30.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_9",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_6",
+        "doc_sla_p1_2026_c_6",
+        "doc_hr_leave_policy_c_8"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.1938183000311255,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Mỗi tài khoản được kết nối VPN trên tối đa 2 thiết bị cùng lúc.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_4",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_4",
+        "doc_it_helpdesk_faq_c_2",
+        "doc_it_helpdesk_faq_c_3"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.337113499990664,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Yêu cầu được gửi trong vòng 7 ngày kể từ thời điểm xác nhận đơn hàng.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_3",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_1",
+        "doc_policy_refund_v4_c_4",
+        "doc_sla_p1_2026_c_7"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.0487856999970973,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Tất cả nhân viên mới trong 30 ngày đầu.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_2",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_6",
+        "doc_it_helpdesk_faq_c_1",
+        "doc_hr_leave_policy_c_1"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.7269726999802515,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Database sập, API gateway down, toàn bộ người dùng không thể đăng nhập.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_1",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_8",
+        "doc_access_control_sop_c_6",
+        "doc_hr_leave_policy_c_6"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.3670854999800213,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Thông báo cho Line Manager trước 9:00 sáng ngày nghỉ.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_2",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_4",
+        "doc_hr_leave_policy_c_2",
+        "doc_access_control_sop_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.989320900000166,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Mang thiết bị đến IT Room (tầng 3) để kiểm tra.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_7",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_3",
+        "doc_policy_refund_v4_c_8",
+        "doc_access_control_sop_c_1"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.031884900003206,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Finance Team xử lý trong 3-5 ngày làm việc và thông báo kết quả cho khách hàng.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_6",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_6",
+        "doc_policy_refund_v4_c_5",
+        "doc_policy_refund_v4_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.846028400002979,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Tài liệu này quy định quy trình cấp phép truy cập vào các hệ thống nội bộ của công ty.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_1",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_1",
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_2"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.239993199997116,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Gửi thông báo tới Slack #incident-p1 và email incident@company.internal ngay lập tức.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_7",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_6",
+        "doc_sla_p1_2026_c_7",
+        "doc_sla_p1_2026_c_8"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.3923280000453815,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"12 ngày/năm cho nhân viên dưới 3 năm kinh nghiệm.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_0",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_1",
+        "doc_hr_leave_policy_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.4999077999964356,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Download tại https://vpn.company.internal/download.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_3",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_3",
+        "doc_it_helpdesk_faq_c_4",
+        "doc_it_helpdesk_faq_c_2"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.50172380002914,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Các đơn hàng đặt trước ngày có hiệu lực sẽ áp dụng theo chính sách hoàn tiền phiên bản 3.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_1",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_3",
+        "doc_it_helpdesk_faq_c_8",
+        "doc_hr_leave_policy_c_5"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.337360200006515,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Line Manager + IT Admin + IT Security.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_3",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_9",
+        "doc_hr_leave_policy_c_0",
+        "doc_it_helpdesk_faq_c_0"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 3.164807000022847,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"15 phút kể từ khi ticket được tạo.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_3",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_3",
+        "doc_access_control_sop_c_8",
+        "doc_sla_p1_2026_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.1667112999712117,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Nhân viên sau probation period có thể làm remote tối đa 2 ngày/tuần.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_7",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_4",
+        "doc_policy_refund_v4_c_6",
+        "doc_access_control_sop_c_7"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 2.4489841999602504,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Nếu vẫn không có, tạo ticket P2 kèm địa chỉ email gửi và thời gian gửi.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_8",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_7",
+        "doc_sla_p1_2026_c_8",
+        "doc_sla_p1_2026_c_1"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.3,
+      "agreement_rate": 0.5,
+      "latency": 3.376807500026189,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"IT Security thực hiện access review mỗi 6 tháng.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_9",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_10",
+        "doc_access_control_sop_c_9",
+        "doc_access_control_sop_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 2.6532293999916874,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Sự cố ảnh hưởng toàn bộ hệ thống production, không có workaround.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_0",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_1",
+        "doc_sla_p1_2026_c_0",
+        "doc_access_control_sop_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.4899624999961816,
+      "status": "pass"
+    }
+  ],
+  "v2_results": [
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Sau khi khắc phục, viết incident report trong vòng 24 giờ.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_8",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_8",
+        "doc_sla_p1_2026_c_5",
+        "doc_sla_p1_2026_c_3"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.6142622999614105,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Nhân viên gửi yêu cầu nghỉ phép qua hệ thống HR Portal (https://hr.company.internal) ít nhất 3 ngày làm việc trước ngày nghỉ.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_4",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_4",
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.882283999992069,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Nhắc nhở sẽ được gửi 30 ngày trước khi hết hạn.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_6",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_6",
+        "doc_access_control_sop_c_8",
+        "doc_sla_p1_2026_c_5"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 5.00102990004234,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Yêu cầu được gửi trong vòng 7 ngày làm việc kể từ thời điểm xác nhận đơn hàng.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_2",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_2",
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_5"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.803334800002631,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"On-call IT Admin có thể cấp quyền tạm thời (max 24 giờ) sau khi được Tech Lead phê duyệt bằng lời.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_7",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_7",
+        "doc_access_control_sop_c_2",
+        "doc_access_control_sop_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 6.389343600021675,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"v2025.1 (2025-03-01): Phiên bản đầu tiên.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_10",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_10",
+        "doc_hr_leave_policy_c_0",
+        "doc_policy_refund_v4_c_1"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 4.264910099969711,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"4.2 Yêu cầu kỹ thuật khi remote:\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_8",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_7",
+        "doc_hr_leave_policy_c_8",
+        "doc_hr_leave_policy_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.069678100000601,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Mật khẩu mới sẽ được gửi qua email công ty trong vòng 5 phút.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_1",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_2",
+        "doc_it_helpdesk_faq_c_1",
+        "doc_it_helpdesk_faq_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 3.3,
+      "agreement_rate": 0.5,
+      "latency": 5.538046100002248,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"khách hàng có thể chọn nhận store credit thay thế với giá trị 110% so với số tiền hoàn.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_7",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_7",
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_5"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 2.6,
+      "agreement_rate": 0.5,
+      "latency": 6.462992099986877,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Tài liệu này trước đây có tên 'Approval Matrix for System Access'.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_0",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_1",
+        "doc_access_control_sop_c_10"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.9705676999874413,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Cập nhật SLA P1 resolution từ 6 giờ xuống 4 giờ.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_9",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_9",
+        "doc_sla_p1_2026_c_3",
+        "doc_sla_p1_2026_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 5.552131000033114,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Có thể gửi yêu cầu muộn hơn nhưng phải được Line Manager đồng ý qua tin nhắn trực tiếp.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_5",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_5",
+        "doc_hr_leave_policy_c_4",
+        "doc_hr_leave_policy_c_6"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.493944399990141,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Hệ thống sẽ nhắc nhở 7 ngày trước khi hết hạn.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_2",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_6",
+        "doc_it_helpdesk_faq_c_2",
+        "doc_access_control_sop_c_9"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.093782900017686,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Chính sách này áp dụng cho tất cả các đơn hàng được đặt trên hệ thống nội bộ kể từ ngày 01/02/2026.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_0",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_1",
+        "doc_policy_refund_v4_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.095012400008272,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Mọi bất thường phải được báo cáo lên CISO trong vòng 24 giờ.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_10",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_10",
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_8"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 2.6,
+      "agreement_rate": 0.5,
+      "latency": 3.756918700004462,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Ngay khi nhận ticket, update mỗi 30 phút cho đến khi resolve.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_4",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_4",
+        "doc_sla_p1_2026_c_3",
+        "doc_sla_p1_2026_c_5"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 5.0065951000433415,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Làm thêm giờ phải được Line Manager phê duyệt trước bằng văn bản.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_6",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_6",
+        "doc_hr_leave_policy_c_5",
+        "doc_hr_leave_policy_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.916097400011495,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"9000 (8:00 - 18:00, Thứ 2 - Thứ 6)\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_9",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_9",
+        "doc_hr_leave_policy_c_9",
+        "doc_policy_refund_v4_c_8"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.57876360003138,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Đơn hàng đã áp dụng mã giảm giá đặc biệt theo chương trình khuyến mãi Flash Sale.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_4",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_4",
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 4.0,
+      "agreement_rate": 0.5,
+      "latency": 3.98279249999905,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"IT Security review với Level 3 và Level 4.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_6",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_1",
+        "doc_access_control_sop_c_6"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.5,
+      "final_score": 3.3,
+      "agreement_rate": 0.5,
+      "latency": 5.035918099980336,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"On-call engineer nhận alert hoặc ticket, xác nhận severity trong 5 phút.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_6",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_6",
+        "doc_sla_p1_2026_c_7",
+        "doc_sla_p1_2026_c_3"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.069629799982067,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Theo lịch nghỉ lễ quốc gia do HR công bố hàng năm vào tháng 12.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_3",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_3",
+        "doc_hr_leave_policy_c_2"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.528526799986139,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Nhắc nhở sẽ được gửi 30 ngày trước khi hết hạn.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_5",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_6",
+        "doc_access_control_sop_c_8",
+        "doc_sla_p1_2026_c_5"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 2.906859299982898,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Thứ 2 - Thứ 6, 8:00 - 17:30.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_8",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_7",
+        "doc_policy_refund_v4_c_5"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 2.6,
+      "agreement_rate": 0.5,
+      "latency": 4.430433900037315,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Line Manager phê duyệt yêu cầu trong 1 ngày làm việc.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_5",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_2",
+        "doc_access_control_sop_c_4",
+        "doc_access_control_sop_c_1"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.964055599994026,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Một số tính năng không hoạt động, ảnh hưởng một nhóm người dùng.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_2",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_2",
+        "doc_sla_p1_2026_c_1",
+        "doc_it_helpdesk_faq_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 4.0,
+      "agreement_rate": 0.5,
+      "latency": 3.1424730999860913,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Tối đa 5 ngày phép năm chưa dùng được chuyển sang năm tiếp theo.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_1",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_2",
+        "doc_hr_leave_policy_c_7"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 2.957812600012403,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Truy cập https://sso.company.internal/reset hoặc liên hệ Helpdesk qua ext. 9000.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_0",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_0",
+        "doc_it_helpdesk_faq_c_1",
+        "doc_it_helpdesk_faq_c_2"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.223632799985353,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"CS Agent xem xét trong vòng 1 ngày làm việc và xác nhận điều kiện đủ điều kiện.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_5",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_5",
+        "doc_policy_refund_v4_c_0",
+        "doc_access_control_sop_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 2.6,
+      "agreement_rate": 0.5,
+      "latency": 3.830868699995335,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Sau 24 giờ, phải có ticket chính thức hoặc quyền bị thu hồi tự động.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_8",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_8",
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_10"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 4.0,
+      "agreement_rate": 0.5,
+      "latency": 4.015648100001272,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Tự động escalate sau 90 phút không có phản hồi.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_5",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_5",
+        "doc_sla_p1_2026_c_3",
+        "doc_sla_p1_2026_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 4.752659899997525,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Thứ 2 - Thứ 6, 8:30 - 17:30.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_9",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_9",
+        "doc_hr_leave_policy_c_0",
+        "doc_policy_refund_v4_c_8"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 1.3,
+      "agreement_rate": 0.5,
+      "latency": 4.20029649999924,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Mỗi tài khoản được kết nối VPN trên tối đa 2 thiết bị cùng lúc.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_4",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_4",
+        "doc_it_helpdesk_faq_c_2",
+        "doc_it_helpdesk_faq_c_3"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 2.964810799981933,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Yêu cầu được gửi trong vòng 7 ngày kể từ thời điểm xác nhận đơn hàng.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_3",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_2",
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_5"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 4.0,
+      "agreement_rate": 0.5,
+      "latency": 3.6586633000406437,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Tất cả nhân viên mới trong 30 ngày đầu.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_2",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_2",
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_1"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.208285200002138,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Database sập, API gateway down, toàn bộ người dùng không thể đăng nhập.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_1",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_1",
+        "doc_it_helpdesk_faq_c_2",
+        "doc_access_control_sop_c_1"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.3977686999714933,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Thông báo cho Line Manager trước 9:00 sáng ngày nghỉ.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_2",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_4",
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_2"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.5,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.7064185999915935,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Mang thiết bị đến IT Room (tầng 3) để kiểm tra.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_7",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_7",
+        "doc_it_helpdesk_faq_c_9",
+        "doc_it_helpdesk_faq_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.5133711000089534,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Finance Team xử lý trong 3-5 ngày làm việc và thông báo kết quả cho khách hàng.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_6",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_6",
+        "doc_policy_refund_v4_c_5",
+        "doc_policy_refund_v4_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.226621799985878,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Tài liệu này quy định quy trình cấp phép truy cập vào các hệ thống nội bộ của công ty.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_1",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_1",
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_2"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.3877403999795206,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Gửi thông báo tới Slack #incident-p1 và email incident@company.internal ngay lập tức.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_7",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_6",
+        "doc_sla_p1_2026_c_7",
+        "doc_sla_p1_2026_c_8"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 2.7635397000121884,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"12 ngày/năm cho nhân viên dưới 3 năm kinh nghiệm.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_0",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_1",
+        "doc_hr_leave_policy_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.1686111000017263,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Download tại https://vpn.company.internal/download.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_3",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_3",
+        "doc_it_helpdesk_faq_c_4",
+        "doc_it_helpdesk_faq_c_2"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.071763700048905,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu policy_refund_v4, quy định nào mô tả nội dung: \"Các đơn hàng đặt trước ngày có hiệu lực sẽ áp dụng theo chính sách hoàn tiền phiên bản 3.\"?",
+      "expected_chunk_id": "doc_policy_refund_v4_c_1",
+      "retrieved_chunk_ids": [
+        "doc_policy_refund_v4_c_0",
+        "doc_policy_refund_v4_c_1",
+        "doc_policy_refund_v4_c_7"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.500657800002955,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"Line Manager + IT Admin + IT Security.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_3",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_1",
+        "doc_access_control_sop_c_0",
+        "doc_access_control_sop_c_3"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.5,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.328029999975115,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"15 phút kể từ khi ticket được tạo.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_3",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_3",
+        "doc_access_control_sop_c_8",
+        "doc_sla_p1_2026_c_4"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 3.2654801000026055,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu hr_leave_policy, quy định nào mô tả nội dung: \"Nhân viên sau probation period có thể làm remote tối đa 2 ngày/tuần.\"?",
+      "expected_chunk_id": "doc_hr_leave_policy_c_7",
+      "retrieved_chunk_ids": [
+        "doc_hr_leave_policy_c_7",
+        "doc_hr_leave_policy_c_0",
+        "doc_hr_leave_policy_c_8"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "final_score": 1.3,
+      "agreement_rate": 0.5,
+      "latency": 2.853881699964404,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu it_helpdesk_faq, quy định nào mô tả nội dung: \"Nếu vẫn không có, tạo ticket P2 kèm địa chỉ email gửi và thời gian gửi.\"?",
+      "expected_chunk_id": "doc_it_helpdesk_faq_c_8",
+      "retrieved_chunk_ids": [
+        "doc_it_helpdesk_faq_c_7",
+        "doc_it_helpdesk_faq_c_9",
+        "doc_sla_p1_2026_c_7"
+      ],
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "final_score": 1.0,
+      "agreement_rate": 0.5,
+      "latency": 4.057499699993059,
+      "status": "fail"
+    },
+    {
+      "question": "Theo tài liệu access_control_sop, quy định nào mô tả nội dung: \"IT Security thực hiện access review mỗi 6 tháng.\"?",
+      "expected_chunk_id": "doc_access_control_sop_c_9",
+      "retrieved_chunk_ids": [
+        "doc_access_control_sop_c_10",
+        "doc_access_control_sop_c_9",
+        "doc_access_control_sop_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 2.7303067999891937,
+      "status": "pass"
+    },
+    {
+      "question": "Theo tài liệu sla_p1_2026, quy định nào mô tả nội dung: \"Sự cố ảnh hưởng toàn bộ hệ thống production, không có workaround.\"?",
+      "expected_chunk_id": "doc_sla_p1_2026_c_0",
+      "retrieved_chunk_ids": [
+        "doc_sla_p1_2026_c_1",
+        "doc_sla_p1_2026_c_0",
+        "doc_access_control_sop_c_0"
+      ],
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "final_score": 5.0,
+      "agreement_rate": 0.5,
+      "latency": 4.196455999976024,
+      "status": "pass"
+    }
+  ]
+}
