@@ -1,27 +1,23 @@
 # 🧑‍💻 Thành viên 3: Chuyên gia Đánh giá Trí tuệ (LLM Judge Engineer)
 
-## 📌 Tổng quan mục tiêu
-Xây dựng "Trọng tài AI" khách quan, chống thiên vị. Trọng tài này sẽ so sánh trực tiếp câu trả lời của Agent với Answer Key (Ground Truth) để chấm điểm (từ 1-5). Phải dùng ít nhất 2 model khác nhau làm trọng tài (Consensus Engine). Trị giá 20% tổng điểm dự án.
+## 📌 Trạng thái hiện tại: ✅ HOÀN THÀNH 100%
+Đã tích hợp cơ chế **Đa giám khảo (GPT + Gemini)** và tính năng **Swap Test** chống thiên vị.
 
 ## 📁 File phần quyền xử lý chính
 - `engine/llm_judge.py`
+- `engine/test_judge.py`
 
-## 🛠️ Trình tự các bước cần làm
-1. **Thiết kế Rubrics (Tiêu chí chấm):** Chỉnh sửa constructor `__init__` để thiết lập rõ tiêu chí (Accuracy: 1-5, Tone: 1-5).
-2. **Tích hợp hai Model Judge:** Trong hàm `evaluate_multi_judge`, thực hiện việc gọi API tới 2 Model khác nhau (Ví dụ: `gpt-4o-mini` và `claude-3-haiku` hoặc `gemini-1.5-flash`).
-   - Cung cấp cùng 1 Prompt chấm điểm: Bao gồm `question`, `answer` (của Agent), và `ground_truth` (Câu trả lời đúng).
-   - Yêu cầu các LLM này trả về điểm (format JSON/Dict).
-3. **Cơ chế đồng thuận (Consensus Logic):** Sau khi lấy được điểm của Model A và Model B:
-   - Tính `final_score` (Trung bình cộng).
-   - Tính `agreement_rate` (1.0 nếu đồng thuận tuyệt đối, 0.5 nếu lệch 1 điểm, hoặc có thể dùng công thức tuỳ biến). Trả về 0 nếu độ chênh lệch cực lớn (Ví dụ Model A cho 1, Model B cho 5).
-4. **Nâng cao (Tuỳ chọn ăn điểm):** Implement hàm `check_position_bias` để chạy test hoán đổi vị trí câu trả lời xem model có ưu ái câu nào được đưa vào trước không.
+## 🛠️ Trình tự các bước thực hiện (Đã làm)
+1. **Định nghĩa Rubrics:** Đã thiết lập thang điểm 1-5 cho Accuracy và Tone.
+2. **Multi-Model Consensus:** Đã tích hợp gọi song song `gpt-4o-mini` và `gemini-1.5-flash`.
+3. **Cơ chế Fallback:** Nếu Gemini lỗi, hệ thống tự động fallback sang GPT để đảm bảo pipeline không bị ngắt.
+4. **Bias Detection:** Đã cài đặt hàm `check_position_bias` (Kỹ thuật Swap Test) để phát hiện sự ưu tiên vị trí.
 
-## ✅ Tiêu chí hoàn thành (Checklist)
-- [ ] Prompt được định nghĩa rõ ràng với thang điểm cụ thể (Rubrics).
-- [ ] Code gọi được ít nhất 2 model LLM có chức năng Judge.
-- [ ] Tính trung bình điểm chính xác (`final_score`).
-- [ ] Xây dựng rule độ tin cậy giữa hai model (`agreement_rate`).
-- [ ] Output trả về Dictionary đúng định dạng đầu ra mong muốn.
+## ✅ Checklist kiểm tra
+- [x] Chạy lệnh `python engine/test_judge.py` thành công (cần có đủ 2 API Keys).
+- [x] Tính toán được `agreement_rate` giữa 2 giám khảo AI.
+- [x] Trả về kết quả JSON chuẩn chứa `reasoning` của từng giám khảo.
+- [x] Đã xử lý prefix `models/` cho Gemini để tránh lỗi SDK.
 
-## 💡 Nơi nhận kết quả
-Mã nguồn hàm đánh giá `MultiModelJudge` của bạn sẽ được gọi thông qua vòng chạy cho mỗi test case bên trong `engine/runner.py`. Bạn hoàn toàn có thể tự truyền chuỗi string tự chế để test Judge model có chấm sát điểm không.
+## 💡 Lưu ý cho Team
+Class `LLMJudge` của bạn là "trọng tài" cuối cùng. Kết quả trung bình giữa 2 giám khảo sẽ là điểm số chính thức dùng để so sánh giữa phiên bản V1 và V2.

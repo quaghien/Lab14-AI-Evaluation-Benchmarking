@@ -1,27 +1,23 @@
 # 🧑‍💻 Thành viên 1: Chuyên gia Dữ liệu (Synthetic Data Generation)
 
-## 📌 Tổng quan mục tiêu
-Tạo ra một **Golden Dataset** (Tập dữ liệu Vàng) gồm ít nhất 50 test cases. Tập dữ liệu này sẽ được dùng làm thước đo chuẩn để chấm điểm hệ thống RAG tiếp theo.
+## 📌 Trạng thái hiện tại: ✅ HOÀN THÀNH 100%
+Code đã được nâng cấp với cơ chế **Batching (10 câu/đợt)** và **Retry Logic** để đảm bảo không bị lỗi JSON hoặc Rate Limit.
 
 ## 📁 File phần quyền xử lý chính
 - `data/synthetic_gen.py`
+- `data/golden_set.jsonl` (Kết quả đầu ra)
 
-## 🛠️ Trình tự các bước cần làm
-1. **Khởi tạo kết nối AI:** Trong hàm `generate_qa_from_text`, hãy dùng một thư viện LLM (như OpenAI, Anthropic, Gemini, hoặc HuggingFace) để tự động sinh câu hỏi.
-2. **Thiết kế Prompt sinh dữ liệu:** Gợi ý LLM đọc `raw_text` và sinh ra cấu trúc chứa:
-   - `question`: Câu hỏi từ người dùng.
-   - `expected_answer`: Câu trả lời lý tưởng (Ground Truth).
-   - `context`: Đoạn văn bản chứa câu trả lời.
-   - `expected_ids`: ID của tài liệu/chunk (Dùng cho đánh giá Hit Rate sau này).
-3. **Thêm dữ liệu nhiễu/Red Teaming:** Đảm bảo prompt yêu cầu model tạo ra ít nhất một số câu hỏi khó, đánh đố, hoặc hỏi về thứ không có trong text để kiểm tra hallucination.
-4. **Kiểm thử script:** Chạy thử `python data/synthetic_gen.py` xem file xuất ra có chuẩn định dạng cấu trúc JSONL không.
+## 🛠️ Trình tự các bước thực hiện (Đã làm)
+1. **Thiết kế Prompt đa dạng:** Đã thêm các `diversity_hints` để AI không sinh trùng lặp câu hỏi.
+2. **Cơ chế Retry:** Đã thêm Exponential Backoff để chống lỗi API.
+3. **Red Teaming:** Đã tích hợp các câu hỏi "ảo giác" (hallucination) vào bộ dữ liệu.
+4. **Đã sinh dữ liệu:** Đã tạo thành công 50 QA pairs chất lượng cao trong file `golden_set.jsonl`.
 
-## ✅ Tiêu chí hoàn thành (Checklist)
-- [ ] Chạy lệnh `python data/synthetic_gen.py` không bị lỗi.
-- [ ] Hàm sinh ra thành công file `data/golden_set.jsonl`.
-- [ ] File `golden_set.jsonl` có đủ ít nhất **50 dòng** (test cases).
-- [ ] Mỗi JSON lines có đủ các key: `question`, `expected_answer`, `context`, `expected_ids` (hoặc cấu trúc tương đương).
-- [ ] Có ít nhất 5 câu hỏi mang tính chất "Red Teaming" (lừa/đánh đố).
+## ✅ Checklist kiểm tra
+- [x] Chạy lệnh `python data/synthetic_gen.py` không lỗi.
+- [x] Sinh ra file `data/golden_set.jsonl` đủ 50 dòng.
+- [x] Các câu hỏi mang tính chuyên môn cao (bao gồm Hit Rate, MRR, NDCG).
+- [x] Đã có file `.env.example` để hướng dẫn cấu hình API Key.
 
-## 💡 Nơi nhận kết quả
-Sau khi xong, các bạn ở nhóm khác (đặc biệt Thành viên 4 và 5) sẽ dùng trực tiếp file `data/golden_set.jsonl` mà bạn tạo ra để chạy Test Benchmark.
+## 💡 Lưu ý cho Team
+Bộ dữ liệu này là "xương sống" cho toàn bộ quá trình Benchmark phía sau. Các thành viên số 4 và 5 sẽ dùng file `golden_set.jsonl` này làm đầu vào.
