@@ -10,69 +10,81 @@ class BenchmarkRunner:
         self.judge = judge
         self.config = config
 
-    async def run_single_test(self, test_case: Dict) -> Dict:
+    async def _run_single_attempt(self, test_case: Dict) -> Dict:
         start_time = time.perf_counter()
 
-        try:
-            question = test_case["question"]
-            expected_chunk_id = test_case["expected_chunk_id"]
-            expected_answer = test_case.get("expected_answer", "")
+        question = test_case["question"]
+        expected_chunk_id = test_case["expected_chunk_id"]
+        expected_answer = test_case.get("expected_answer", "")
 
-            # 🔹 1. Agent
-            response = await self.agent.query(question)
+        # 1) Agent retrieval + generation
+        response = await self.agent.query(question)
 
-            answer = response["answer"]
-            retrieved_chunk_ids = response["retrieved_chunk_ids"]
-            retrieved_chunks = response["retrieved_chunks"]
+        answer = response["answer"]
+        retrieved_chunk_ids = response["retrieved_chunk_ids"]
+        retrieved_chunks = response["retrieved_chunks"]
 
-            # 🔹 2. Retrieval metrics
-            retrieval_scores = self.retrieval_evaluator.evaluate_case(
-                expected_chunk_id,
-                retrieved_chunk_ids,
-                top_k=self.config["TOP_K"]
-            )
+        # 2) Retrieval metrics
+        retrieval_scores = self.retrieval_evaluator.evaluate_case(
+            expected_chunk_id,
+            retrieved_chunk_ids,
+            top_k=self.config["TOP_K"]
+        )
 
-            # 🔹 3. Judge (CÓ context)
-            judge_result = await self.judge.evaluate_multi_judge(
-                question,
-                answer,
-                expected_answer,
-                retrieved_chunks
-            )
+        # 3) Judge metrics (includes grounding with retrieved context)
+        judge_result = await self.judge.evaluate_multi_judge(
+            question,
+            answer,
+            expected_answer,
+            retrieved_chunks
+        )
 
-            final_score = judge_result["final_score"]
-            agreement_rate = judge_result["agreement_rate"]
+        final_score = judge_result["final_score"]
+        agreement_rate = judge_result["agreement_rate"]
 
-            # 🔹 4. Latency
-            latency = time.perf_counter() - start_time
+        # 4) Latency
+        latency = time.perf_counter() - start_time
 
-            # 🔹 5. Status
-            status = (
-                "pass"
-                if final_score >= self.config["STATUS_PASS_THRESHOLD_FINAL_SCORE"]
-                else "fail"
-            )
+        # 5) Status
+        status = (
+            "pass"
+            if final_score >= self.config["STATUS_PASS_THRESHOLD_FINAL_SCORE"]
+            else "fail"
+        )
 
-            return {
-                "question": question,
-                "expected_chunk_id": expected_chunk_id,
-                "retrieved_chunk_ids": retrieved_chunk_ids,
-                "hit_rate": retrieval_scores["hit_rate"],
-                "mrr": retrieval_scores["mrr"],
-                "ndcg": retrieval_scores["ndcg"],
-                "final_score": final_score,
-                "agreement_rate": agreement_rate,
-                "latency": latency,
-                "status": status
-            }
+        return {
+            "question": question,
+            "expected_chunk_id": expected_chunk_id,
+            "retrieved_chunk_ids": retrieved_chunk_ids,
+            "hit_rate": retrieval_scores["hit_rate"],
+            "mrr": retrieval_scores["mrr"],
+            "ndcg": retrieval_scores["ndcg"],
+            "final_score": final_score,
+            "agreement_rate": agreement_rate,
+            "latency": latency,
+            "status": status
+        }
 
-        except Exception as e:
-            return {
-                "question": test_case.get("question"),
-                "status": "error",
-                "error": str(e),
-                "latency": time.perf_counter() - start_time
-            }
+    async def run_single_test(self, test_case: Dict) -> Dict:
+        max_retry = int(self.config.get("MAX_RETRY_PER_CASE", 1))
+        attempts = max_retry + 1
+        last_error = None
+
+        for attempt in range(1, attempts + 1):
+            try:
+                result = await self._run_single_attempt(test_case)
+                result["attempt"] = attempt
+                return result
+            except Exception as e:
+                last_error = str(e)
+                if attempt >= attempts:
+                    return {
+                        "question": test_case.get("question"),
+                        "status": "error",
+                        "error": last_error,
+                        "attempt": attempt,
+                        "latency": 0.0,
+                    }
 
     async def run_all(self, dataset: List[Dict], concurrency: int) -> List[Dict]:
         semaphore = asyncio.Semaphore(concurrency)
@@ -96,12 +108,25 @@ class BenchmarkRunner:
         valid = [r for r in results if r["status"] != "error"]
 
         if not valid:
-            return {}
+            return {
+                "avg_latency": 0.0,
+                "hit_rate": 0.0,
+                "mrr": 0.0,
+                "ndcg": 0.0,
+                "avg_final_score": 0.0,
+                "avg_agreement_rate": 0.0,
+                "pass_rate": 0.0,
+                "total": len(results),
+                "valid": 0,
+                "errors": len(results),
+            }
 
         avg_latency = sum(r["latency"] for r in valid) / len(valid)
         hit_rate = sum(r["hit_rate"] for r in valid) / len(valid)
         mrr = sum(r["mrr"] for r in valid) / len(valid)
         ndcg = sum(r["ndcg"] for r in valid) / len(valid)
+        avg_final_score = sum(r["final_score"] for r in valid) / len(valid)
+        avg_agreement_rate = sum(r["agreement_rate"] for r in valid) / len(valid)
 
         pass_rate = sum(1 for r in valid if r["status"] == "pass") / len(valid)
 
@@ -110,7 +135,10 @@ class BenchmarkRunner:
             "hit_rate": hit_rate,
             "mrr": mrr,
             "ndcg": ndcg,
+            "avg_final_score": avg_final_score,
+            "avg_agreement_rate": avg_agreement_rate,
             "pass_rate": pass_rate,
             "total": len(results),
-            "valid": len(valid)
+            "valid": len(valid),
+            "errors": len(results) - len(valid),
         }
