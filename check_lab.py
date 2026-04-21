@@ -31,31 +31,47 @@ def validate_lab():
         print(f"❌ File reports/summary.json không phải JSON hợp lệ: {e}")
         return
 
-    if "metrics" not in data or "metadata" not in data:
-        print("❌ File summary.json thiếu trường 'metrics' hoặc 'metadata'.")
+    required_summary_keys = {"metadata", "metrics_v1", "metrics_v2", "delta", "release_decision"}
+    if not required_summary_keys.issubset(set(data.keys())):
+        print("❌ File summary.json thiếu một trong các trường bắt buộc: metadata, metrics_v1, metrics_v2, delta, release_decision.")
         return
 
-    metrics = data["metrics"]
+    metrics_v1 = data["metrics_v1"]
+    metrics_v2 = data["metrics_v2"]
+    delta = data["delta"]
+    release = data["release_decision"]
 
     print(f"\n--- Thống kê nhanh ---")
-    print(f"Tổng số cases: {data['metadata'].get('total', 'N/A')}")
-    print(f"Điểm trung bình: {metrics.get('avg_score', 0):.2f}")
+    print(f"Tổng số cases: {data['metadata'].get('total_cases', 'N/A')}")
+    print(f"V1 avg_judge_score: {metrics_v1.get('avg_judge_score', 0):.2f}")
+    print(f"V2 avg_judge_score: {metrics_v2.get('avg_judge_score', 0):.2f}")
 
     # EXPERT CHECKS
-    has_retrieval = "hit_rate" in metrics
+    has_retrieval = ("hit_rate" in metrics_v1) and ("hit_rate" in metrics_v2)
     if has_retrieval:
-        print(f"✅ Đã tìm thấy Retrieval Metrics (Hit Rate: {metrics['hit_rate']*100:.1f}%)")
+        print(
+            "✅ Đã tìm thấy Retrieval Metrics "
+            f"(V1: {metrics_v1['hit_rate']*100:.1f}% | V2: {metrics_v2['hit_rate']*100:.1f}%)"
+        )
     else:
-        print(f"⚠️ CẢNH BÁO: Thiếu Retrieval Metrics (hit_rate).")
+        print("⚠️ CẢNH BÁO: Thiếu Retrieval Metrics (hit_rate).")
 
-    has_multi_judge = "agreement_rate" in metrics
+    has_multi_judge = ("avg_judge_score" in metrics_v1) and ("avg_judge_score" in metrics_v2)
     if has_multi_judge:
-        print(f"✅ Đã tìm thấy Multi-Judge Metrics (Agreement Rate: {metrics['agreement_rate']*100:.1f}%)")
+        print("✅ Đã tìm thấy Multi-Judge Metrics (avg_judge_score ở cả V1/V2).")
     else:
-        print(f"⚠️ CẢNH BÁO: Thiếu Multi-Judge Metrics (agreement_rate).")
+        print("⚠️ CẢNH BÁO: Thiếu Multi-Judge Metrics (avg_judge_score).")
 
-    if data["metadata"].get("version"):
-        print(f"✅ Đã tìm thấy thông tin phiên bản Agent (Regression Mode)")
+    has_delta = {"delta_hit_rate", "delta_mrr", "delta_judge_score", "delta_latency"}.issubset(set(delta.keys()))
+    if has_delta:
+        print("✅ Đã tìm thấy Delta metrics.")
+    else:
+        print("⚠️ CẢNH BÁO: Thiếu một số trường delta.")
+
+    if isinstance(release, dict) and "decision" in release:
+        print(f"✅ Release decision: {release['decision']}")
+    else:
+        print("⚠️ CẢNH BÁO: Thiếu release_decision.decision.")
 
     print("\n🚀 Bài lab đã sẵn sàng để chấm điểm!")
 

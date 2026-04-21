@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-04-21T13:37:44.957128+00:00",
+    "total_cases": 50
+  },
+  "metrics_v1": {
+    "hit_rate": 0.48,
+    "mrr": 0.42,
+    "avg_judge_score": 2.9,
+    "avg_latency": 3.6309283199999483,
+    "pass_rate": 0.46,
+    "valid_cases": 50,
+    "error_cases": 0
+  },
+  "metrics_v2": {
+    "hit_rate": 0.88,
+    "mrr": 0.76,
+    "avg_judge_score": 4.192,
+    "avg_latency": 4.030624167999486,
+    "pass_rate": 0.8,
+    "valid_cases": 50,
+    "error_cases": 0
+  },
+  "delta": {
+    "delta_hit_rate": 0.4,
+    "delta_mrr": 0.34,
+    "delta_judge_score": 1.2920000000000003,
+    "delta_latency": 0.3996958479995376
+  },
+  "release_decision": {
+    "decision": "APPROVE",
+    "reasons": [
+      "All gate conditions passed."
+    ],
+    "conditions": {
+      "hit_rate_non_decrease": true,
+      "mrr_non_decrease": true,
+      "delta_hit_rate_gte_0_10": true,
+      "delta_mrr_gte_0_10": true,
+      "delta_judge_score_gte_0_00": true
+    }
+  }
+}
