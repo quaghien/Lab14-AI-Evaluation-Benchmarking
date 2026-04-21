@@ -1,68 +1,72 @@
-# 🚀 Phân công nhiệm vụ Lab 14: AI Evaluation Factory
+# WORK DIVISION - Bản chốt cuối cùng
 
-Chào nhóm, dựa trên yêu cầu từ `README.md` và tiêu chí chấm điểm `GRADING_RUBRIC.md`, dự án này được chia thành 5 module độc lập. Mọi người có thể code song song, tự test bằng dữ liệu giả (mock data) mà không cần chờ người khác làm xong.
+## 1) Mục tiêu bắt buộc
+- Benchmark Retrieval Agent với 2 phiên bản:
+  - `v1`: 50% random chunk.
+  - `v2`: 0% random, chỉ FAISS similarity.
+- Dùng dữ liệu từ `data/docs`.
+- Tạo đúng `50` câu benchmark map tới `50` `expected_chunk_id` khác nhau.
 
----
+## 2) Thông số cố định toàn team (không được đổi)
+- `CHUNK_SIZE_TOKENS = 256`
+- `CHUNK_OVERLAP_TOKENS = 32`
+- `EMBEDDING_MODEL = text-embedding-3-small`
+- `FAISS_INDEX_TYPE = IndexFlatIP`
+- `TOP_K = 3`
+- `RANDOM_RATE_V1 = 0.5`
+- `RANDOM_SEED = 20260421`
+- `TOTAL_QUESTIONS = 50`
+- `CONCURRENCY = 8`
+- `JUDGE_WEIGHT_ACCURACY = 0.7`
+- `JUDGE_WEIGHT_GROUNDING = 0.3`
+- `GATE_MIN_DELTA_HIT_RATE = +0.10`
+- `GATE_MIN_DELTA_MRR = +0.10`
+- `GATE_MIN_DELTA_FINAL_SCORE = 0.00`
 
-## 🧑‍💻 Thành viên 1: Chuyên gia Dữ liệu (Synthetic Data Generation)
-**Mục tiêu:** Tạo ra "Golden Dataset" chuẩn để kiểm thử hệ thống.
-- **File phụ trách:** `data/synthetic_gen.py`
-- **Nhiệm vụ chính:** 
-  1. Viết prompt để gọi LLM sinh ra ít nhất **50 test cases**.
-  2. Mỗi test case phải bao gồm: `question`, `expected_answer`, `context` và `expected_ids` (hoặc `ground_truth_ids`).
-  3. Cần đảm bảo có các bộ "Red Teaming" (câu hỏi lừa) để test độ hóc búa.
-  4. Lưu xuất data ra file `data/golden_set.jsonl`.
-- **Cách làm độc lập:** Bạn chỉ cần quan tâm tới việc dùng API (OpenAI/Anthropic...) để sinh data text. Không cần tương tác với bất kỳ file nào khác ngoài `synthetic_gen.py`.
+## 3) Output bắt buộc
+- `data/chunks.jsonl`
+- `data/faiss.index`
+- `data/chunk_meta.json`
+- `data/golden_set.jsonl`
+- `reports/benchmark_results.json`
+- `reports/summary.json`
+- `analysis/failure_analysis.md`
 
----
+## 4) Chia việc 5 người (ngắn gọn, dễ nhìn)
+- **Người 1 - Data Engineer**
+  - Input: `data/docs/*.txt`
+  - Làm: chunking + sinh `golden_set`
+  - Output: `data/chunks.jsonl`, `data/golden_set.jsonl`
+- **Người 2 - Retrieval Engineer**
+  - Input: `chunks.jsonl`, `golden_set.jsonl`
+  - Làm: build FAISS, implement `retrieve_v1/retrieve_v2`, metric retrieval
+  - Output: agent query schema + retrieval eval pass
+- **Người 3 - LLM Judge Engineer**
+  - Input: question, expected_answer, retrieved_chunks, agent_answer
+  - Làm: multi-judge + agreement + fallback
+  - Output: score schema ổn định cho runner
+- **Người 4 - Async Runner**
+  - Input: `golden_set.jsonl`, agent, evaluator, judge
+  - Làm: chạy batch async cho `v1` và `v2`
+  - Output: `reports/benchmark_results.json`
+- **Người 5 - DevOps/Analyst**
+  - Input: `benchmark_results.json`
+  - Làm: tổng hợp delta + release gate + 5 whys
+  - Output: `reports/summary.json`, `analysis/failure_analysis.md`
 
-## 🧑‍💻 Thành viên 2: Kỹ sư Đánh giá Tìm kiếm (Retrieval Evaluator)
-**Mục tiêu:** Đảm bảo hệ thống chấm điểm VectorDB hoạt động chuẩn xác (chiếm 15% tổng điểm).
-- **File phụ trách:** `engine/retrieval_eval.py`
-- **Nhiệm vụ chính:** 
-  1. Code logic toán học cho hàm `calculate_hit_rate` (Kiểm tra ID đúng có lọt top K không).
-  2. Code logic tính `calculate_mrr` (Mean Reciprocal Rank - thứ hạng của ID đúng trong top K).
-  3. Trả về kết quả trung bình cho toàn bộ bộ dữ liệu truyền vào hàm `evaluate_batch`.
-- **Cách làm độc lập:** Đây hoàn toàn là logic thuật toán. Hãy tự tạo các mảng mock test chứa list arrays IDs và ID đáp án để kiểm tra kết quả tính toán có ra đúng công thức hay không, không cần phải chạy Agent để test.
+## 5) Flow chạy end-to-end (lệnh chuẩn)
+1. `python data/synthetic_gen.py --mode chunk`
+2. `python data/synthetic_gen.py --mode golden --n 50`
+3. `python data/validate_dataset.py`
+4. `python agent/main_agent.py --build-index`
+5. `python main.py --mode benchmark --both`
+6. `python main.py --mode summarize`
+7. `python check_lab.py`
 
----
-
-## 🧑‍💻 Thành viên 3: Chuyên gia Đánh giá Trí tuệ (Multi-Judge Consensus)
-**Mục tiêu:** Xây dựng Giám khảo AI công tâm, dùng nhiều model để chống thiên vị (chiếm 20% tổng điểm).
-- **File phụ trách:** `engine/llm_judge.py`
-- **Nhiệm vụ chính:** 
-  1. Viết prompt chấm điểm cụ thể cho AI Judge dựa trên `accuracy` và `tone`.
-  2. Tích hợp ít nhất 2 LLM model khác nhau (ví dụ: GPT-4o và Claude 3.5, hoặc Gemini) để cùng chấm điểm 1 cặp (câu trả lời của Agent vs. Ground Truth).
-  3. Xây dựng logic tính trung bình điểm `final_score` và tỷ lệ đồng thuận `agreement_rate` (nếu hai model lệch nhau > 1 điểm thì tính là bất đồng).
-- **Cách làm độc lập:** Hãy gọi trực tiếp hàm `evaluate_multi_judge` với các chuỗi ký tự ảo làm input, kiểm tra xem nó gọi API và xử lý JSON trả ra chuẩn không.
-
----
-
-## 🧑‍💻 Thành viên 4: Kiến trúc sư Tối ưu hóa (Async Metrics & Runner)
-**Mục tiêu:** Hệ thống phải chạy cực nhanh (chấm 50 cases dưới 2 phút) và ổn định (chiếm 15% tổng điểm).
-- **File phụ trách:** `engine/runner.py` và `agent/main_agent.py`
-- **Nhiệm vụ chính:** 
-  1. Hoàn thiện hàm `run_all` dùng `asyncio.gather()` để chạy đồng thời các test case. 
-  2. Cài đặt giới hạn `batch_size` (semaphore) hợp lý để tránh lỗi Rate Limit khi gọi API quá nhanh.
-  3. Đảm bảo format đầu ra của `MainAgent.query()` khớp hoàn toàn với pipeline ở Runner.
-- **Cách làm độc lập:** Tự gán các hàm giả lập sleep (`await asyncio.sleep()`) vào hàm `evaluate` và `judge` trong runner. Viết một hàm test chạy 50 dummy cases xem tổng thời gian và tốc độ xử lý batch có đúng ý đồ logic asyncio không.
-
----
-
-## 🧑‍💻 Thành viên 5: Chuyên viên DevOps & Phân tích chất lượng (Release Gate & RCA)
-**Mục tiêu:** Kiểm soát tự động Regression và phân tích chuyên sâu lỗi (chiếm 25% tổng điểm).
-- **File phụ trách:** `main.py` và `analysis/failure_analysis.md`
-- **Nhiệm vụ chính:**
-  1. Trong `main.py`: Viết logic quyết định tự động **Tự Release** (nếu Delta > 0) hoặc **Rollback/Từ chối** (nếu Delta <= 0) bằng cách so sánh điểm của V1 và V2. Xuất được các file json yêu cầu.
-  2. Trong báo cáo: Đi sâu vào kết quả output JSON sau cùng, áp dụng kỹ thuật "5 Whys" để chỉ ra được nguyên nhân gốc vì sao AI trả lời sai (do chunking, retrieval hay LLM hallucination).
-  3. Check script cuối cùng: Chạy `check_lab.py` để đảm bảo bài nộp không thiếu file.
-- **Cách làm độc lập:** Viết sẵn khung báo cáo `failure_analysis.md`. Test logic trong `main.py` bằng cách tự gán kết quả dict ảo cho `v1_summary` và `v2_summary`.
-
----
-
-## 🤝 Quy trình rắp ráp cuối cùng (Trong 30 phút cuối):
-- Mọi người push file nhánh của mình vào nhánh `main`.
-- Chạy `python data/synthetic_gen.py` thật để tạo file `golden_set`.
-- Chạy `python main.py` chạy toàn bộ pipeline async.
-- Nhóm 5 lấy các file JSON sinh ra chạy để lấy evidence điền báo cáo Markdown.
-- Chạy `python check_lab.py` -> Nộp bài!
+## 6) Điều kiện PASS
+- `golden_set.jsonl` có đúng `50` dòng và `50 expected_chunk_id` unique.
+- `summary.json` có đủ: `hit_rate_v1/v2`, `mrr_v1/v2`, `final_score_v1/v2`, `delta_*`, `release_decision`.
+- `release_decision = APPROVE` chỉ khi:
+  - `delta_hit_rate >= 0.10`
+  - `delta_mrr >= 0.10`
+  - `delta_final_score >= 0.00`
